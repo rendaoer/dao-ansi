@@ -1,5 +1,6 @@
 //!Most terminals support 8 and 16 colors, as well as 256 (8-bit) colors. These colors are set by the user, but have commonly defined meanings.
 
+// Foreground Color:前景色（文本颜色）
 pub enum ForegroundColor {
     /// <span style="color:black;background:gray">黑色<span>
     Black = 30,
@@ -24,6 +25,7 @@ pub enum ForegroundColor {
 }
 
 impl ForegroundColor {
+    // return enum value
     pub fn value(&self) -> u8 {
         match self {
             ForegroundColor::Black => 30,
@@ -40,6 +42,7 @@ impl ForegroundColor {
     }
 }
 
+// Background Color：背景颜色
 pub enum BackgroundColor {
     /// <span style="color:black;background:gray">黑色<span>
     Black = 40,
@@ -64,6 +67,7 @@ pub enum BackgroundColor {
 }
 
 impl BackgroundColor {
+    // return enum value
     pub fn value(&self) -> u8 {
         match self {
             BackgroundColor::Black => 40,
