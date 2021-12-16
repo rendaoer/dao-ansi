@@ -1,6 +1,10 @@
 pub struct HexColor(u8, u8, u8);
 
 impl HexColor {
+    /// New HexColor Object
+    pub fn new(c1: u8, c2: u8, c3: u8) -> HexColor {
+        return HexColor(c1, c2, c3);
+    }
     /// Enter the hexadecimal code to print the string:输入16进制代码打印字符串
     pub fn print(&self) {
         print!(

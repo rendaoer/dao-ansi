@@ -91,6 +91,16 @@ pub struct PrimaryColor {
 }
 
 impl PrimaryColor {
+    /// new PrimaryColor Object
+    pub fn new(
+        foreground_color: ForegroundColor,
+        background_color: BackgroundColor,
+    ) -> PrimaryColor {
+        PrimaryColor {
+            foreground_color,
+            background_color,
+        }
+    }
     /// Implicitly formatted text:隐式格式化文本
     pub fn print(&self, text: &str) {
         print!(
