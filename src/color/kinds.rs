@@ -42,7 +42,7 @@ impl ForegroundColor {
     }
 }
 
-// Background Color：背景颜色
+// Background Color:背景颜色
 pub enum BackgroundColor {
     /// <span style="color:black;background:gray">黑色<span>
     Black = 40,
@@ -91,9 +91,27 @@ pub struct PrimaryColor {
 }
 
 impl PrimaryColor {
-    /// Implicitly formatted text：隐式格式化文本
+    /// Implicitly formatted text:隐式格式化文本
     pub fn print(&self, text: &str) {
         print!(
+            "\x1b[1;{};{}m{}\x1b[0m",
+            self.foreground_color.value(),
+            self.background_color.value(),
+            text,
+        )
+    }
+    /// Implicitly formatted text:隐式格式化文本
+    pub fn println(&self, text: &str) {
+        println!(
+            "\x1b[1;{};{}m{}\x1b[0m",
+            self.foreground_color.value(),
+            self.background_color.value(),
+            text,
+        )
+    }
+    ///Formatted return string:格式化返回字符串
+    pub fn format(&self, text: &str) -> String {
+        format!(
             "\x1b[1;{};{}m{}\x1b[0m",
             self.foreground_color.value(),
             self.background_color.value(),
